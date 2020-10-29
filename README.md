@@ -10,7 +10,7 @@
 
 ## Crud de demostracion con fines academico 
 
-Este crud se realiza solamente con fines cademicos, se utiliza laravel 8, el theme  sb-admin-2 https://startbootstrap.com/themes/sb-admin-2/
+Este crud se realiza solamente con fines academicos, se utiliza laravel 8, el theme  sb-admin-2 https://startbootstrap.com/themes/sb-admin-2/
 
 
 ## License
