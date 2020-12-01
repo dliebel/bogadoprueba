@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Api\AuthController;
+use App\Http\Controllers\Api\StudentController;
+use App\Http\Controllers\Api\ProjectController;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -13,6 +16,20 @@ use Illuminate\Support\Facades\Route;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+ 
+Route::post('register', [AuthController::class, 'register']);
+Route::post('login', [AuthController::class, 'login']);
+
+Route::apiResource('students', StudentController::class)->middleware('auth:api');
+Route::apiResource('projects', ProjectController::class)->middleware('auth:api');
+
+// Route::middleware('auth:api')->group(function () {
+//     Route::get('get-user', [PassportAuthController::class, 'userInfo']);
+ 
+   
+ 
+// });
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
