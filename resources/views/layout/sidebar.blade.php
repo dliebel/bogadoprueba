@@ -94,6 +94,12 @@
           <span>Charts</span></a>
       </li>
 
+      <li class="nav-item">
+        <a class="nav-link" href="{{ route('student.index') }}">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Estudiantes</span></a>
+      </li>
+
       <!-- Nav Item - Tables -->
       <li class="nav-item">
         <a class="nav-link" href="tables.html">

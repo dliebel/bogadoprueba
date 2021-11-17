@@ -19,6 +19,11 @@ class CreatedStudentTable extends Migration
             $table->date('birth')->nullable();
             $table->string('surname')->nullable();
             $table->timestamps();
+
+
+            $table->unsignedBigInteger('user_id');
+
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

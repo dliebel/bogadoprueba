@@ -15,7 +15,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $data = Student::all();
+        $data = Student::with('user')->paginate(2);
         return view('student.index', compact('data'));
     }
 
@@ -26,7 +26,8 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
+        $datoF= \App\Models\User::all();
+        return view('student.create',compact('datoF'));
     }
 
     /**
@@ -63,7 +64,9 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        return view('student.edit', compact('student'));
+       // $student =\App\Models\Student::find($id);
+        $datoF= \App\Models\User::all();
+        return view('student.edit', compact('student','datoF'));
     }
 
     /**

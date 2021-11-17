@@ -26,7 +26,8 @@ class CreatedRequestStudent extends FormRequest
         return [
             'name' => 'required|max:255',
             'surname' => 'required',
-            'birth' => 'nullable|date',
+            'birth' => 'required|nullable|date',
+            'user_id' => 'required',
         ];
     }
 
@@ -40,6 +41,7 @@ class CreatedRequestStudent extends FormRequest
             return [
                 'name' => 'nombre',
                 'surname' => 'apellido',
+                'birth' => 'cumpleanhos',
             ];
         }
 

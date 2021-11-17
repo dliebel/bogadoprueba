@@ -39,6 +39,28 @@
                  
                 </div>
 
+
+                <div class="form-group">
+
+
+                    <label for="exampleFormControlSelect1">usuario</label>
+                    <select class="form-control" name="user_id" aria-label="Default select example">
+                        @foreach ($datoF as $data)
+                
+                        @if ($data->id == $student->user_id)
+                            <option selected value="{{$data->id}}">{{$data->name}}</option>
+                        @else
+                            <option value="{{$data->id}}">{{$data->name}}     {{$data->id}}</option>
+                        @endif
+
+
+                        
+                    @endforeach
+                    </select>
+                </div>
+
+               
+               
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Actualizar</button>

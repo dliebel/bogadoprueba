@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Heading -->
     <h1 class="h3 mb-2 text-gray-800">Estudiantes</h1>
-  
+
     <div class="card shadow mb-4">
         <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">Formulario de Creacion </h6>
@@ -34,19 +34,36 @@
                         <label for="birth">Nacimiento</label>
                         <input type="date" name="birth" class="form-control" id="birth">
                     </div>
-                 
+
                 </div>
+
+
+
+                <div class="form-group">
+
+
+                    <label for="exampleFormControlSelect1">usuario</label>
+                    <select class="form-control" name="user_id" aria-label="Default select example">
+                        @foreach ($datoF as $data)
+                            <option value="{{ $data->id }}">{{ $data->name }}</option>
+
+                        @endforeach
+                    </select>
+                </div>
+
 
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Guardar</button>
                         <a class="btn btn-secundary" href="{{ route('student.index') }}">Cancelar</a>
-        
-                    </div>
-                  </div>
 
-           
-              
+                    </div>
+                </div>
+
+
+
+
+
             </form>
 
 

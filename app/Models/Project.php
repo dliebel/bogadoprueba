@@ -29,4 +29,13 @@ class Project extends Model
     protected $casts = [
         'cost' => 'int',
     ];
+
+
+    static $rules=[
+        'name' => 'required|max:255',
+        'introduction' => 'required',
+        'location' => 'required',
+        'cost' => 'required',
+
+    ];
 }

@@ -11,5 +11,18 @@ class Student extends Model
 
     protected $table= 'student';
 
-    protected $fillable = ['name', 'surname', 'birth','address'];
+    protected $fillable = ['name', 'surname', 'birth','address','user_id'];
+
+
+    public function user(){
+       
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
+
+    public function joins(){
+        $this->join('contacts', 'users.id', '=', 'contacts.user_id')
+        ->join('orders', 'users.id', '=', 'orders.user_id')
+        ->select('users.*', 'contacts.phone', 'orders.price');
+    }
+    
 }

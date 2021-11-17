@@ -23,6 +23,7 @@ Route::post('login', [AuthController::class, 'login']);
 
 Route::apiResource('students', StudentController::class)->middleware('auth:api');
 Route::apiResource('projects', ProjectController::class)->middleware('auth:api');
+// Route::apiResource('projects', ProjectController::class);
 
 // Route::middleware('auth:api')->group(function () {
 //     Route::get('get-user', [PassportAuthController::class, 'userInfo']);
